@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Digiturnal — a performance marketing partner in Doha, Qatar.">
+  <title>Digiturnal — Performance Marketing Partner</title>
+  <link rel="preload" href="assets/fonts/foro-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/satoshi.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Digiturnal home">
+      <img src="assets/gold-logo.svg" alt="Digiturnal">
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" onclick="toggleMenu()">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="#work"><small>01</small>Work</a>
+      <a href="#services"><small>02</small>Services</a>
+      <a href="#about"><small>03</small>About</a>
+      <a href="#contact"><small>04</small>Contact</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section class="hero" id="about" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <h1 id="hero-title">Building<br>marketing that<br><span>outlives us.</span></h1>
+          <a class="gold-button" href="#contact">Start a project <b aria-hidden="true">→</b></a>
+        </div>
+
+        <div class="year-mark reveal" aria-hidden="true">
+          <img src="assets/2026-mark.png" alt="">
+          <a class="view-work" href="#work" tabindex="-1">View our work <i>↓</i></a>
+        </div>
+
+        <p class="hero-thesis reveal">A performance marketing partner for brands that want <strong>leverage, not lock-in.</strong> Strategy, branding, design, production, performance, and engineering. Built to <strong>outlive the engagement.</strong></p>
+      </div>
+
+      <div class="reel" aria-label="Selected campaign imagery">
+        <div class="reel-track">
+          <div class="reel-set">
+            <figure class="reel-card short"><img src="assets/reel/01.jpg" alt="Cocktail campaign at a premium restaurant"></figure>
+            <figure class="reel-card tall"><img src="assets/reel/02.jpg" alt="Warm hospitality brand campaign"></figure>
+            <figure class="reel-card short"><img src="assets/reel/03.jpg" alt="Fine dining tasting presentation"></figure>
+            <figure class="reel-card tall"><img src="assets/reel/04.jpg" alt="Executive fashion campaign"></figure>
+            <figure class="reel-card short"><img src="assets/reel/05.jpg" alt="Coffee lifestyle campaign"></figure>
+            <figure class="reel-card tall"><img src="assets/reel/06.jpg" alt="Editorial brand photography"></figure>
+            <figure class="reel-card short"><img src="assets/reel/07.jpg" alt="Doha lifestyle campaign"></figure>
+          </div>
+          <div class="reel-set" aria-hidden="true">
+            <figure class="reel-card short"><img src="assets/reel/01.jpg" alt=""></figure>
+            <figure class="reel-card tall"><img src="assets/reel/02.jpg" alt=""></figure>
+            <figure class="reel-card short"><img src="assets/reel/03.jpg" alt=""></figure>
+            <figure class="reel-card tall"><img src="assets/reel/04.jpg" alt=""></figure>
+            <figure class="reel-card short"><img src="assets/reel/05.jpg" alt=""></figure>
+            <figure class="reel-card tall"><img src="assets/reel/06.jpg" alt=""></figure>
+            <figure class="reel-card short"><img src="assets/reel/07.jpg" alt=""></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="light-page">
+      <section class="works section" id="work" aria-labelledby="works-title">
+        <div class="section-heading reveal">
+          <h2 id="works-title">Selected Works</h2>
+          <div class="heading-actions">
+            <a href="#work-grid">Explore more</a>
+            <button class="round-button prev" type="button" aria-label="Previous projects" disabled>←</button>
+            <button class="round-button next" type="button" aria-label="Next projects" onclick="moveCarousel(1)">→</button>
+          </div>
+        </div>
+
+        <div class="work-scroller" id="work-grid" tabindex="0" aria-label="Project carousel">
+          <a class="work-card" href="https://www.digiturnal.com/work/fitness/top-volley" target="_blank" rel="noreferrer">
+            <img src="assets/work/top-volley.jpg" alt="Top Volley youth sports campaign">
+            <span><b>Top Volley</b><small>Fitness &amp; Sports</small></span>
+          </a>
+          <a class="work-card" href="https://www.digiturnal.com/work/fitness/eq" target="_blank" rel="noreferrer">
+            <img src="assets/work/equilibrium.jpg" alt="Equilibrium strength training campaign">
+            <span><b>Equilibrium</b><small>Fitness &amp; Sports</small></span>
+          </a>
+          <a class="work-card" href="https://www.digiturnal.com/work/luxury/the-closet" target="_blank" rel="noreferrer">
+            <img src="assets/work/the-closet.png" alt="The Closet luxury fashion campaign">
+            <span><b>The Closet</b><small>Luxury &amp; Retail</small></span>
+          </a>
+          <a class="work-card" href="https://www.digiturnal.com/work/fitness/la-pelota" target="_blank" rel="noreferrer">
+            <img src="assets/work/la-pelota.png" alt="La Pelota padel campaign">
+            <span><b>La Pelota</b><small>Fitness &amp; Sports</small></span>
+          </a>
+          <a class="work-card" href="https://www.digiturnal.com/work/food/sumosan" target="_blank" rel="noreferrer">
+            <img src="assets/work/sumosan.jpg" alt="Sumosan restaurant campaign">
+            <span><b>Sumosan</b><small>Food &amp; Beverage</small></span>
+          </a>
+          <a class="work-card" href="https://www.digiturnal.com/work/logistics/gwc-logistics" target="_blank" rel="noreferrer">
+            <img src="assets/work/gwc.jpg" alt="GWC Logistics campaign">
+            <span><b>GWC Logistics</b><small>Logistics</small></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="client-rail" aria-label="Selected clients">
+        <div class="logo-track">
+          <div class="logo-set">
+            <img src="assets/clients/client-1.svg" alt="Client logo"><img src="assets/clients/client-2.svg" alt="Client logo"><img src="assets/clients/client-3.svg" alt="Client logo"><img src="assets/clients/client-4.svg" alt="Client logo"><img src="assets/clients/client-5.svg" alt="Client logo"><img src="assets/clients/client-6.svg" alt="Client logo"><img src="assets/clients/client-7.svg" alt="Client logo"><img src="assets/clients/client-8.svg" alt="Client logo"><img src="assets/clients/client-9.svg" alt="Client logo"><img src="assets/clients/client-10.svg" alt="Client logo"><img src="assets/clients/client-11.svg" alt="Client logo"><img src="assets/clients/client-12.svg" alt="Client logo"><img src="assets/clients/client-13.svg" alt="Client logo">
+          </div>
+          <div class="logo-set" aria-hidden="true">
+            <img src="assets/clients/client-1.svg" alt=""><img src="assets/clients/client-2.svg" alt=""><img src="assets/clients/client-3.svg" alt=""><img src="assets/clients/client-4.svg" alt=""><img src="assets/clients/client-5.svg" alt=""><img src="assets/clients/client-6.svg" alt=""><img src="assets/clients/client-7.svg" alt=""><img src="assets/clients/client-8.svg" alt=""><img src="assets/clients/client-9.svg" alt=""><img src="assets/clients/client-10.svg" alt=""><img src="assets/clients/client-11.svg" alt=""><img src="assets/clients/client-12.svg" alt=""><img src="assets/clients/client-13.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" id="services" aria-labelledby="services-title">
+        <div class="section-heading reveal">
+          <h2 id="services-title">Our Services</h2>
+          <a class="read-more" href="https://www.digiturnal.com/services" target="_blank" rel="noreferrer">Read more <i>→</i></a>
+        </div>
+        <div class="service-grid">
+          <a class="service-card reveal" href="https://www.digiturnal.com/services/strategy" target="_blank" rel="noreferrer">
+            <span class="ghost-number">01</span><img src="assets/icons/strategy.svg" alt="">
+            <h3>Strategy</h3><p>We provide strategic consulting that maps market complexities into actionable growth plans, ensuring your brand moves with precision and a clear competitive advantage.</p>
+          </a>
+          <a class="service-card reveal" href="https://www.digiturnal.com/services/social-media" target="_blank" rel="noreferrer">
+            <span class="ghost-number">02</span><img src="assets/icons/social.svg" alt="">
+            <h3>Social Media Growth</h3><p>We manage integrated distribution systems that align content with real-time analytics to drive measurable business growth.</p>
+          </a>
+          <a class="service-card reveal" href="https://www.digiturnal.com/services/engineering" target="_blank" rel="noreferrer">
+            <span class="ghost-number">03</span><img src="assets/icons/engineering.svg" alt="">
+            <h3>Engineering &amp; Systems</h3><p>We engineer high-performance digital systems by bridging strategic automation and technical speed to ensure scalable, measurable conversion results.</p>
+          </a>
+          <a class="service-card reveal" href="https://www.digiturnal.com/services/production" target="_blank" rel="noreferrer">
+            <span class="ghost-number">04</span><img src="assets/icons/production.svg" alt="">
+            <h3>Production</h3><p>We produce performance-led visual content that aligns high-end craft with platform-specific logic to maximise digital growth.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="cta-section" id="contact" aria-labelledby="cta-title">
+        <div class="cta-card reveal">
+          <span class="eyebrow">Ready to start</span>
+          <h2 id="cta-title">Let's engineer your<br><em>growth system.</em></h2>
+          <p>Three minutes. One structured intake. We learn<br>your business before we ever get on a call.</p>
+          <a class="red-button" href="mailto:info@digiturnal.com?subject=Start%20a%20Project">Start a Project <b>→</b></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-pattern" aria-hidden="true"></div>
+    <div class="footer-center">
+      <img src="assets/gold-logo.svg" alt="Digiturnal" class="footer-logo">
+      <nav aria-label="Footer navigation"><a href="#work">Work</a><a href="#about">Philosophy</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+      <div class="socials"><a href="https://www.linkedin.com/company/digiturnal" aria-label="LinkedIn">in</a><a href="https://www.instagram.com/digiturnal" aria-label="Instagram">◎</a><a href="https://www.twitter.com/digiturnal" aria-label="X">X</a><a href="https://www.facebook.com/digiturnal" aria-label="Facebook">f</a><a href="https://www.tiktok.com/@digiturnal" aria-label="TikTok">♪</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2019 – 2026 Digiturnal</span><a href="https://maps.google.com/?q=25.3191,51.5305" target="_blank" rel="noreferrer">25.3191° N&nbsp;&nbsp; 51.5305° E</a><span><a href="https://www.digiturnal.com/privacy">Privacy</a> · <a href="https://www.digiturnal.com/terms">Terms</a></span></div>
+  </footer>
+
+  <a class="call-pill" href="tel:+97466606710"><small>Call Us</small>+974 6660 6710</a>
+  <a class="whatsapp" href="https://wa.me/97466606710" aria-label="Chat on WhatsApp">⌁</a>
+  <button class="back-top" type="button" aria-label="Back to top" onclick="scrollPageTop()">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
