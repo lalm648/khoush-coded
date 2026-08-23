@@ -160,3 +160,31 @@ if (yearMark && !reducedMotion) {
     yearMark.style.setProperty('--year-ry', '0deg');
   });
 }
+
+const tiltCards = document.querySelectorAll('.tilt-card');
+
+function resetCardTilt(card) {
+  card.style.setProperty('--spot-x', '50%');
+  card.style.setProperty('--spot-y', '50%');
+  card.style.setProperty('--tilt-x', '0deg');
+  card.style.setProperty('--tilt-y', '0deg');
+}
+
+if (!reducedMotion) {
+  tiltCards.forEach(card => {
+    card.addEventListener('pointermove', event => {
+      if (event.pointerType === 'touch') return;
+      const bounds = card.getBoundingClientRect();
+      const x = Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width));
+      const y = Math.min(1, Math.max(0, (event.clientY - bounds.top) / bounds.height));
+
+      card.style.setProperty('--spot-x', `${x * 100}%`);
+      card.style.setProperty('--spot-y', `${y * 100}%`);
+      card.style.setProperty('--tilt-x', `${(0.5 - y) * 5}deg`);
+      card.style.setProperty('--tilt-y', `${(x - 0.5) * 6}deg`);
+    });
+
+    card.addEventListener('pointerleave', () => resetCardTilt(card));
+    card.addEventListener('focusout', () => resetCardTilt(card));
+  });
+}
