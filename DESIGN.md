@@ -9,6 +9,7 @@ A feminine, editorial creative-agency homepage with a confident Doha presence: b
 - Voice: direct, reassuring, strategic, creatively confident.
 - Signature: interactive ornamental current-year artwork with botanical linework.
 - Rhythm: dark hero and brand statement alternating with spacious light editorial sections.
+- About-section hierarchy relies on scale, whitespace and soft tonal surfaces rather than outlined containers or long explanatory copy.
 - Alignment: narrative and service sections stay left-aligned on mobile; the complete hero composition, brand manifesto and consultation introduction use a deliberate centered axis.
 - Imagery: premium campaign photography with fashion, hospitality, sport, and lifestyle energy. Gallery subjects must visibly match strategic planning, customer insight, audience targeting, brand systems, campaign production, and social growth.
 
