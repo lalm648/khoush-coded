@@ -42,11 +42,119 @@ function moveCarousel(direction) {
 }
 
 previous.addEventListener('click', () => moveCarousel(-1));
+next.addEventListener('click', () => moveCarousel(1));
 scroller.addEventListener('scroll', updateCarouselButtons, { passive: true });
 window.addEventListener('resize', updateCarouselButtons);
 updateCarouselButtons();
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.querySelectorAll('.mobile-card-slider').forEach((slider, sliderIndex) => {
+  const cards = [...slider.children];
+  const navigation = document.createElement('div');
+  const progress = document.createElement('p');
+  const swipeLabel = document.createElement('span');
+  const counter = document.createElement('b');
+  const actions = document.createElement('div');
+  const previousButton = document.createElement('button');
+  const nextButton = document.createElement('button');
+
+  navigation.className = 'mobile-slider-nav';
+  navigation.setAttribute('aria-label', `${slider.getAttribute('aria-label') || 'Card carousel'} navigation`);
+  progress.className = 'mobile-slider-progress';
+  swipeLabel.textContent = 'Swipe';
+  counter.setAttribute('aria-live', 'polite');
+  actions.className = 'mobile-slider-actions';
+  previousButton.type = 'button';
+  previousButton.textContent = '←';
+  previousButton.setAttribute('aria-label', `Show previous item in carousel ${sliderIndex + 1}`);
+  nextButton.type = 'button';
+  nextButton.textContent = '→';
+  nextButton.setAttribute('aria-label', `Show next item in carousel ${sliderIndex + 1}`);
+
+  progress.append(swipeLabel, counter);
+  actions.append(previousButton, nextButton);
+  navigation.append(progress, actions);
+  slider.insertAdjacentElement('afterend', navigation);
+
+  function currentCardIndex() {
+    const sliderLeft = slider.getBoundingClientRect().left;
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.getBoundingClientRect().left - sliderLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+    return closestIndex;
+  }
+
+  function updateMobileSliderNavigation() {
+    const index = currentCardIndex();
+    counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+    previousButton.disabled = index === 0;
+    nextButton.disabled = index === cards.length - 1;
+  }
+
+  function moveMobileSlider(direction) {
+    const currentIndex = currentCardIndex();
+    const nextIndex = Math.min(cards.length - 1, Math.max(0, currentIndex + direction));
+    const sliderLeft = slider.getBoundingClientRect().left;
+    const cardLeft = cards[nextIndex].getBoundingClientRect().left;
+    slider.scrollBy({ left: cardLeft - sliderLeft, behavior: reducedMotion ? 'auto' : 'smooth' });
+  }
+
+  previousButton.addEventListener('click', () => moveMobileSlider(-1));
+  nextButton.addEventListener('click', () => moveMobileSlider(1));
+  slider.addEventListener('scroll', updateMobileSliderNavigation, { passive: true });
+  window.addEventListener('resize', updateMobileSliderNavigation);
+  updateMobileSliderNavigation();
+});
+
+const growthCarousel = document.querySelector('[data-growth-carousel]');
+if (growthCarousel) {
+  const growthTrack = growthCarousel.querySelector('.growth-track');
+  const growthSlides = [...growthCarousel.querySelectorAll('.growth-slide')];
+  const growthCurrent = growthCarousel.querySelector('[data-growth-current]');
+  let growthIndex = 0;
+  let growthTimer;
+
+  function showGrowthSlide(index) {
+    growthIndex = (index + growthSlides.length) % growthSlides.length;
+    growthTrack.style.transform = `translateX(-${growthIndex * 100}%)`;
+    growthCurrent.textContent = String(growthIndex + 1).padStart(2, '0');
+    growthSlides.forEach((slide, slideIndex) => {
+      const active = slideIndex === growthIndex;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+      slide.tabIndex = active ? 0 : -1;
+    });
+  }
+
+  function stopGrowthAutoplay() {
+    window.clearInterval(growthTimer);
+  }
+
+  function startGrowthAutoplay() {
+    if (reducedMotion) return;
+    stopGrowthAutoplay();
+    growthTimer = window.setInterval(() => showGrowthSlide(growthIndex + 1), 5600);
+  }
+
+  window.moveGrowthCarousel = direction => {
+    showGrowthSlide(growthIndex + direction);
+    startGrowthAutoplay();
+  };
+  growthCarousel.addEventListener('mouseenter', stopGrowthAutoplay);
+  growthCarousel.addEventListener('mouseleave', startGrowthAutoplay);
+  growthCarousel.addEventListener('focusin', stopGrowthAutoplay);
+  growthCarousel.addEventListener('focusout', startGrowthAutoplay);
+  showGrowthSlide(0);
+  startGrowthAutoplay();
+}
+
 const revealItems = document.querySelectorAll('.reveal');
 if (reducedMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach(item => item.classList.add('visible'));
