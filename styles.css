@@ -240,3 +240,9 @@ body,main,.hero{background:#03110d}
 
 /* Mobile edge rhythm: keep sections and boxed surfaces close to the viewport. */
 @media (max-width:720px){:root{--page:14px}}
+
+/* Service cards sit close to the edge and size themselves to their content. */
+@media (max-width:720px){.service-grid.mobile-card-slider{--slide-width:96%;align-items:start}.service-grid.mobile-card-slider .service-card{min-height:0;height:max-content;align-self:start;padding-bottom:20px}}
+
+/* Principle cards use the same tight mobile right-edge rhythm. */
+@media (max-width:720px){.principle-grid.mobile-card-slider{--slide-width:96%}}

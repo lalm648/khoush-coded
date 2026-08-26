@@ -44,6 +44,8 @@ A feminine, editorial creative-agency homepage with a confident Doha presence: d
 - All grids collapse without removing content or actions.
 - On mobile, every card collection with more than two items becomes a native swipe carousel with scroll snapping and a visible next-card preview; desktop retains its full grid.
 - Every mobile card carousel exposes consistent previous/next controls, a visible swipe cue and a live item counter; arrow targets are at least 44px.
+- Mobile service cards use a restrained next-card preview, content-driven height and 20px bottom padding so they stay close to the page rhythm without empty lower space.
+- Mobile principle cards use the same restrained next-card preview width as services, keeping the Clarity card close to the right edge.
 - Gallery cards remain touch-scrollable and expose their labels without hover on mobile.
 - Contact form becomes one column and map actions remain reachable.
 
