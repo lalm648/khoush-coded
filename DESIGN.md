@@ -2,34 +2,37 @@
 
 ## North Star
 
-A feminine, editorial creative-agency homepage with a confident Doha presence: black cinematic stages, warm ivory content fields, champagne and burnished gold, restrained maroon micro-accents, generous breathing room, and visibly crafted motion.
+A feminine, editorial creative-agency homepage with a confident Doha presence: deep forest stages, warm ivory content fields, muted gold details, generous breathing room, and visibly crafted motion.
 
 ## Brand Register
 
-- Voice: direct, reassuring, strategic, creatively confident.
-- Signature: interactive ornamental current-year artwork with botanical linework.
+- Voice: direct, problem-first, outcome-oriented, reassuring, strategic, and creatively confident. Avoid generic agency claims, vanity metrics, and invented proof.
+- Signature: an interactive campaign signal that connects strategy, creative, media and growth around one focused idea.
 - Rhythm: dark hero and brand statement alternating with spacious light editorial sections.
 - About-section hierarchy relies on scale, whitespace and soft tonal surfaces rather than outlined containers or long explanatory copy.
 - Alignment: narrative and service sections stay left-aligned on mobile; the complete hero composition, brand manifesto and consultation introduction use a deliberate centered axis.
-- Imagery: premium campaign photography with fashion, hospitality, sport, and lifestyle energy. Gallery subjects must visibly match strategic planning, customer insight, audience targeting, brand systems, campaign production, and social growth.
+- Imagery: premium campaign photography with fashion, hospitality, sport, and lifestyle energy. Gallery subjects must visibly match marketing strategy, brand identity, creative campaigns, content production, social media, and digital advertising.
+- Testimonials and client logos remain absent until KHOUSH provides approved, verifiable client assets and statements.
 
 ## Tokens
 
-- Ink: `#202020`; stage: `#000000`; soft stage: `#0b0a0a`.
-- Paper: `#f8f7f4`; champagne: `#f4c151`; pale gold: `#ffe994`.
-- Structural maroon: `#8c0000`. Pale pink is excluded from interface text, card backgrounds and hover states; interactive light and text use champagne gold.
-- Primary interaction and emphasis use champagne or burnished gold; maroon is limited to small structural labels and validation states.
+- Strategic ink: `#16302b`; deep forest stage: `#03110d`; soft forest stage: `#071a15`.
+- Warm ivory paper: `#f5f1e9`; muted gold: `#a38560`; pale gold: `#cbb795`.
+- Pure black, maroon and pale pink are excluded from interface text, card backgrounds and hover states.
+- Primary interaction and emphasis use muted or pale gold; green provides structure, depth and continuity.
 - Display type: Foro; interface/body type: Satoshi.
+- Section titles share one `clamp(42px, 4vw, 68px)` scale at weight 600 and 1.02 line-height; mobile section titles use 39px. The hero remains the only independent display scale.
+- Narrative copy uses 16px/1.75 on desktop and 15px/1.75 on mobile; card copy uses 14px/1.7.
 - Corners: 22–36px for editorial cards; pill controls for primary actions.
-- Spacing: fluid page gutter `clamp(20px, 3.35vw, 64px)` and 75–140px section cadence.
+- Spacing: fluid page gutter `clamp(20px, 3.35vw, 64px)` with a tighter `14px` mobile override, 24px desktop card gaps, 14px mobile carousel gaps, and a 64–116px section cadence based on narrative or stage context.
 
 ## Interaction Contract
 
-- Current year is derived from `Date().getFullYear()` and updates the visible SVG, clipping masks, accessible label, and copyright.
-- Year artwork responds to pointer movement, keyboard focus, and tap/click bloom; reduced-motion removes parallax and transitions.
+- The interactive campaign signal responds to pointer movement, keyboard focus and tap/click activation; reduced-motion removes parallax and transitions.
+- Current year is derived from `Date().getFullYear()` for the copyright only; the hero remains evergreen and campaign-focused.
 - Work gallery is horizontally scrollable with semantic previous/next controls and touch scrolling.
 - Growth story uses one editorial image at a time with concise, non-repeating captions, keyboard controls, paused-on-focus autoplay, and a reduced-motion static state.
-- Research, service and testimonial cards use restrained pointer tilt and local light-follow effects; their meaning and controls never depend on motion.
+- Process and service cards use restrained pointer tilt and local light-follow effects; their meaning and controls never depend on motion.
 - Service iconography is subject-specific: compass for strategy, modular grid for identity, camera for content, and growth chart for social media.
 - Consultation form owns validation, associates text errors with fields, focuses the first error, and hands the completed brief to email.
 - WhatsApp is a fixed expandable control with click-outside and Escape dismissal.
@@ -37,7 +40,7 @@ A feminine, editorial creative-agency homepage with a confident Doha presence: b
 
 ## Responsive Contract
 
-- Desktop hero uses a three-part editorial composition. At `1000px` and below it becomes a centered linear narrative with the headline first, the interactive current-year artwork second, and the thesis third while preserving semantic source order.
+- Desktop hero uses a three-part editorial composition. At `1000px` and below it becomes a centered linear narrative with the headline first, the interactive campaign signal second, and the thesis third while preserving semantic source order.
 - All grids collapse without removing content or actions.
 - On mobile, every card collection with more than two items becomes a native swipe carousel with scroll snapping and a visible next-card preview; desktop retains its full grid.
 - Every mobile card carousel exposes consistent previous/next controls, a visible swipe cue and a live item counter; arrow targets are at least 44px.

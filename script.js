@@ -3,11 +3,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const menuLinks = mobileMenu.querySelectorAll('a');
 
 const currentYear = String(new Date().getFullYear());
-document.querySelectorAll('[data-year-top]').forEach(item => { item.textContent = currentYear.slice(0, 2); });
-document.querySelectorAll('[data-year-bottom]').forEach(item => { item.textContent = currentYear.slice(2); });
 document.querySelectorAll('[data-current-year]').forEach(item => { item.textContent = currentYear; });
-const yearArtwork = document.querySelector('.year-interactive');
-if (yearArtwork) yearArtwork.setAttribute('aria-label', `Interactive ornamental ${currentYear} artwork. Activate to bloom.`);
 
 function setMenu(open) {
   menuButton.setAttribute('aria-expanded', String(open));
@@ -75,7 +71,7 @@ document.querySelectorAll('.mobile-card-slider').forEach((slider, sliderIndex) =
   progress.append(swipeLabel, counter);
   actions.append(previousButton, nextButton);
   navigation.append(progress, actions);
-  slider.insertAdjacentElement('afterend', navigation);
+  slider.insertAdjacentElement('beforebegin', navigation);
 
   function currentCardIndex() {
     const sliderLeft = slider.getBoundingClientRect().left;
@@ -241,31 +237,32 @@ function submitContact(event) {
   window.location.href = `mailto:info@khoush.com?subject=${subject}&body=${body}`;
 }
 
-const yearMark = document.querySelector('.year-mark');
-const yearInteractive = document.querySelector('.year-interactive');
+const campaignMark = document.querySelector('.campaign-mark');
+const campaignInteractive = document.querySelector('.campaign-interactive');
 
-function toggleYearBloom() {
-  const bloomed = yearInteractive.classList.toggle('bloomed');
-  yearInteractive.setAttribute('aria-pressed', String(bloomed));
+function toggleCampaignSignal() {
+  if (!campaignInteractive) return;
+  const activated = campaignInteractive.classList.toggle('activated');
+  campaignInteractive.setAttribute('aria-pressed', String(activated));
 }
 
-if (yearMark && !reducedMotion) {
-  yearMark.addEventListener('pointermove', event => {
+if (campaignMark && !reducedMotion) {
+  campaignMark.addEventListener('pointermove', event => {
     if (event.pointerType === 'touch') return;
-    const bounds = yearMark.getBoundingClientRect();
+    const bounds = campaignMark.getBoundingClientRect();
     const x = Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width));
     const y = Math.min(1, Math.max(0, (event.clientY - bounds.top) / bounds.height));
-    yearMark.style.setProperty('--year-x', `${x * 100}%`);
-    yearMark.style.setProperty('--year-y', `${y * 100}%`);
-    yearMark.style.setProperty('--year-rx', `${(0.5 - y) * 9}deg`);
-    yearMark.style.setProperty('--year-ry', `${(x - 0.5) * 11}deg`);
+    campaignMark.style.setProperty('--signal-x', `${x * 100}%`);
+    campaignMark.style.setProperty('--signal-y', `${y * 100}%`);
+    campaignMark.style.setProperty('--signal-rx', `${(0.5 - y) * 7}deg`);
+    campaignMark.style.setProperty('--signal-ry', `${(x - 0.5) * 9}deg`);
   });
 
-  yearMark.addEventListener('pointerleave', () => {
-    yearMark.style.setProperty('--year-x', '50%');
-    yearMark.style.setProperty('--year-y', '50%');
-    yearMark.style.setProperty('--year-rx', '0deg');
-    yearMark.style.setProperty('--year-ry', '0deg');
+  campaignMark.addEventListener('pointerleave', () => {
+    campaignMark.style.setProperty('--signal-x', '50%');
+    campaignMark.style.setProperty('--signal-y', '50%');
+    campaignMark.style.setProperty('--signal-rx', '0deg');
+    campaignMark.style.setProperty('--signal-ry', '0deg');
   });
 }
 
