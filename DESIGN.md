@@ -12,7 +12,8 @@ A feminine, editorial creative-agency homepage with a confident Doha presence: d
 - About-section hierarchy relies on scale, whitespace and soft tonal surfaces rather than outlined containers or long explanatory copy.
 - Alignment: narrative and service sections stay left-aligned on mobile; the complete hero composition, brand manifesto and consultation introduction use a deliberate centered axis.
 - Imagery: premium campaign photography with fashion, hospitality, sport, and lifestyle energy. Gallery subjects must visibly match marketing strategy, brand identity, creative campaigns, content production, social media, and digital advertising.
-- Testimonials and client logos remain absent until KHOUSH provides approved, verifiable client assets and statements.
+- Client logos use the approved forest-and-gold artwork in `Khoush Website/Clients`. Their four internal importance levels resolve into three public visual bands: Level 1 featured, Level 2 established, and Levels 3–4 supporting. Internal ranking labels are never shown to visitors.
+- Trust sequence: hero promise → compact Level 1 client proof → problem and work → services and process → full client roster → contact. Early proof reduces the distance between the brand promise and credible recognition without duplicating the full roster.
 
 ## Tokens
 

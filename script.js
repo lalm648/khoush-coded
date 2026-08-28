@@ -293,3 +293,26 @@ if (!reducedMotion) {
     card.addEventListener('focusout', () => resetCardTilt(card));
   });
 }
+
+function toggleMotion(button) {
+  const target = document.querySelector(button.dataset.motionTarget);
+  if (!target) return;
+  const paused = target.classList.toggle('motion-paused');
+  button.setAttribute('aria-pressed', String(paused));
+  button.textContent = paused ? button.dataset.resumeLabel : button.dataset.pauseLabel;
+}
+
+// Duplicate each client row only for the seamless visual loop. The copy is hidden
+// from assistive technology so every client name is announced exactly once.
+if (!reducedMotion) {
+  document.querySelectorAll('.client-logo-track').forEach(track => {
+    const set = track.querySelector('.client-logo-set');
+    if (!set) return;
+    const duplicate = set.cloneNode(true);
+    duplicate.setAttribute('aria-hidden', 'true');
+    duplicate.removeAttribute('role');
+    track.appendChild(duplicate);
+    track.classList.add('is-animated');
+    track.closest('.client-band')?.classList.add('clients-ready');
+  });
+}
